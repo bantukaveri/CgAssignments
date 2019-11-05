@@ -1,0 +1,108 @@
+******************************
+1.
+select * from department1;
+
+*********************************************
+2.select * from employee;
+************************************************
+3.
+select * from employeee where deptcode=30;
+********************************************************
+4.
+select * from employeee where empdept='clerk';
+select empname,phnumber,deptcode from employeee where empdept='clerk';
+********************************************************
+5.select deptcode, empname from employeee where deptcode>=20;
+**************************************************************
+6. select * from employeee where commission>=salary;
+***************************************************************
+7. select * from employeee where commission>=60/100*salary;
+****************************************************************
+8. select * from employeee where commission>=50/100*salary;
+*******************************************************************
+9. select * from employeee where deptcode=20 and salary>2000;
+**********************************************************************
+10.select * from employeee where deptcode in(30) and salary>=1500;
+*************************************************************************
+11.select * from employeee where job= 'president' or job= 'manager';
+***************************************************************************
+12.select* from employeee where job= 'manager' and deptcode=30;
+*************************************************************************
+13.select * from employeee where  deptcode in(10) and job= 'manager' or job='clerk';
+***********************************************************************
+14.select * from employeee where  job= 'manager' or deptcode in(10) and job='clerk';
+********************************************************************
+15.select * from employeee where  deptcode in(10)and job= 'manager' or deptcode in(20) and job='clerk';
+**********************************************************************
+16.select * from employeee where job='manager' or job='clerk' and salary>=2000
+**************************************************************************
+17.select * from employeee where salary between 1200 and 1400;
+**********************************************************************
+18.select * from employeee where job='clerks' or job='salesman' or job= 'analyst';
+**************************************************************************
+19.select * from employeee where job not in('clerk','salesman','analyst');
+****************************************************************************
+20.select * from employeee where commission is null;
+******************************************************************************
+21.select * from employeee where commission =0;
+******************************************************************************
+22.select job from employeee where commission is not null;
+*****************************************************************************
+23.select * from employeee where commission is null or commission <=100;
+****************************************************************************
+25.select * from employeee where (salary+commission)>2000;
+********************************************************************************
+26.select * from employeee where empname like 'm%';
+********************************************************************************
+27.select * from employeee where empname like '%i';
+*******************************************************************************
+28.select * from employeee where empname like '%_a';
+****************************************************************************
+29.select * from employeee where length(empname)=5 and empname like '%n';
+**********************************************************************************
+30.select * from employeee where empname like '%n_%';
+***********************************************************************************
+31.SELECT * FROM EMPLOYEEE WHERE (HIREDATE) LIKE '%_FEB%';
+***************************************************************************************
+32.SELECT * FROM EMPLOYEEE WHERE (HIREDATE) LIKE '30%';
+*****************************************************************************************
+33.select * from employeee  where months_between(sysdate,hiredate)>=144;
+****************************************************************************************
+34.select * from employeee where job='manager' and hiredate like '%_07';
+***********************************************************************************
+35.select empname ||','|| job  from employeee ;
+**************************************************************************************
+39.select  length(empname) from employeee ;
+********************************************************************************
+41.select  (empname) from employeee where empname not like '%a%' ;
+*******************************************************
+42.select  (empname) from employeee where empname not like '%r_%' ;
+***********************************************************************************
+43.select substring(empname,1,3) from employeee;
+************************************************************************************
+44.select substring(empname,-3,3) from employeee;
+*******************************************************************************
+45.select  replace(empname,'a','e') from employeee;
+*******************************************************************************
+46.select ceil(salary/1000.000)*1000 from employeee ;
+*****************************************************************************
+47.select salary/30 from employeee  ;
+********************************************************************************
+48.select empname, (salary+((salary*20)/100)) from employeee ;
+*******************************************************************************
+49.select * from employeee where bonus >=200;
+*****************************************************************************
+50.select * from employeee where bonus >=500;
+********************************************************************
+51.select trunc(sysdate)-trunc(t.hiredate) from employeee t;
+********************************************************************************
+52.select empname,hiredate,months_between(sysdate,hiredate) " months" from employeee; 
+*********************************************************************************************
+55.select * from employeee order by empname;
+****************************************************************************************
+57.select * from employeee order by salary, job;
+********************************************************************************
+58.select * from employeee order by  job desc;
+******************************************************************************
+59.select empname,job,salary from employeee order by  job desc, salary desc;
+***************************************************************************************

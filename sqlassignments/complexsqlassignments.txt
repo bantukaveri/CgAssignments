@@ -1,0 +1,31 @@
+*************************************************************
+1.select * from emp where salary=(select max(salary)from emp);
+**************************************************************
+2.select max(e.salary) as salary, d.deptno from dept d, emp e where d.deptno= e.dept_no group by d.deptno;
+***************************************************************
+3.
+select emp.name, dept.name, emp.empno,emp.salary,emp.hiredate,emp.mgr from emp inner join dept on emp.dept_no=dept.deptno;
+*******************************************************************************
+4.select emp.name, dept.name, emp.dept_no,emp.empno,emp.salary,emp.hired_date,emp.mgr from emp inner join dept on emp.dept_no=dept.deptno where deptno=60;
+***************************************************************************************************
+5.select emp.name, dept.name, emp.dept_no,emp.empno,emp.salary,emp.hired_date,emp.mgr from emp inner join dept on emp.dept_no=dept.deptno where deptno=70 and salary>(select salary from emp where name='martin');
+***************************************************************************************************
+6.select  emp.name, emp.empno, dept.deptname, emp.loc from emp inner join dept on emp.dept_no=dept.deptno;
+*********************************************************************************************
+7.select emp.name ,dept.deptname, emp.deptno from emp inner join dept on emp.dept_no= dept.deptno order by deptno;
+*****************************************************************************************
+8.select emp.name ,dept.deptname, emp.deptno , emp.loc from emp inner join dept on emp.deptno= dept.deptno where loc='newyork';
+**************************************************************************************
+9.select emp.name, dept.name ,emp.salary from emp inner join dept on emp.dept_no=dept.deptno where salary in(select min(salary) from emp  group by dept_no);
+************************************************************************************************
+10.select emp.name, dept.name ,emp.salary from emp inner join dept on emp.dept_no=dept.deptno where salary in(select min(salary) from emp  group by dept_no);
+****************************************************************************************************************************************
+12.select e.name,e.role,e.salary,m.mname,m.designation,m.msalary from emp e, manager m where m.manager_id=e.manager_id;
+***********************************************************************************************************************************************************
+13.select o.ordernumber ,o.orderdate,p.productname,t.quantity,t.unitprice from my_order o, order_item t, product p where p.id=t.id;
+************************************************************************************************************************************
+14.SELECT * FROM EMP WHERE SALARY=(SELECT MIN(SALARY) FROM EMPLOYEE WHERE SALARY>(SELECT MIN(SALARY) FROM EMP));
+***********************************************************************************************
+15.select ename,job, salary from emp where salary>=(select  max(salary) from emp where salary <(select max(salary)from emp where salary <(select max(salary)from emp))) order by salary;
+*************************************************************************************************
+
